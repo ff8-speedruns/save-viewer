@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View everything in an FF8 PC save file, in your browser." />
+    <title>FF8 Save Viewer</title>
+    <script>
+      // Shared key with other FF8 tools.
+      try {
+        var s = window.localStorage.getItem('ff8-color-scheme');
+        var scheme = s === 'light' || s === 'dark' || s === 'auto' ? s : 'auto';
+        document.documentElement.setAttribute(
+          'data-mantine-color-scheme',
+          scheme !== 'auto'
+            ? scheme
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light',
+        );
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
