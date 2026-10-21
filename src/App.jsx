@@ -71,7 +71,7 @@ export default function App() {
   return (
     <ToolShell
       title="Save Viewer"
-      status="development"
+      status="working"
       repo="save-viewer"
       size="xl"
       intro="PC save reader."
